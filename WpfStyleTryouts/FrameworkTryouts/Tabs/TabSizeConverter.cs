@@ -10,7 +10,9 @@ namespace FrameworkTryouts.Tabs
         public object Convert(object[] values, Type targetType, object parameter,
             CultureInfo culture)
         {
-            var tabControl = values[0] as TabControl;
+            if (!(values[0] is TabControl tabControl))
+                throw new ArgumentException($"Error during tab size conversion, AncestorType has to be of type {typeof(TabControl)}");
+            
             var width = tabControl.ActualWidth / tabControl.Items.Count;
             //Subtract 1, otherwise we could overflow to two rows.
             return width <= 1 ? 0 : width - 1;
