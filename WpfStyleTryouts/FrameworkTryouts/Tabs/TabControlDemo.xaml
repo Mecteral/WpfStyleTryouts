@@ -13,16 +13,13 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="mah:MetroTabControl">
-                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
-                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
-            </Style>
             <Style TargetType="mah:MetroTabItem">
+                <!-- Sets tab text to uppercase -->
                 <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Upper"></Setter>
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                 <Setter Property="Margin" Value="1 0 1 0"></Setter>
                 <Setter Property="Padding" Value="8"></Setter>
-                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                <!-- Converter is used to make tab items stretch to full possible length -->
                 <Setter Property="Width">
                     <Setter.Value>
                         <MultiBinding Converter="{StaticResource TabSizeConverter}">
@@ -33,6 +30,7 @@
                         </MultiBinding>
                     </Setter.Value>
                 </Setter>
+                <!-- Overridden header template with TextBlock to have full control of text styling -->
                 <Setter Property="HeaderTemplate">
                     <Setter.Value>
                         <DataTemplate >
@@ -46,11 +44,13 @@
                     </Setter.Value>
                 </Setter>
                 <Style.Triggers>
+                    <!-- Style used if tab is not selected -->
                     <Trigger Property="IsSelected" Value="False">
                         <Setter Property="Foreground" Value="DarkGray"></Setter>
                         <Setter Property="BorderThickness" Value="0,0,0,1"></Setter>
                         <Setter Property="BorderBrush" Value="DarkGray"></Setter>
                     </Trigger>
+                    <!-- Style used if tab is selected -->
                     <Trigger Property="IsSelected" Value="True">
                         <Setter Property="Foreground" Value="LightGreen"></Setter>
                         <Setter Property="BorderThickness" Value="0,0,0,2"></Setter>
