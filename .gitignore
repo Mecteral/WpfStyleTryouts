@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WpfStyleTryouts/FrameworkTryouts/obj/Debug
+/WpfStyleTryouts/FrameworkTryouts/bin/Debug
+/WpfStyleTryouts/.vs/WpfStyleTryouts/v16
+/WpfStyleTryouts/packages

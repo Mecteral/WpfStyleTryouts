@@ -1,0 +1,9 @@
+﻿<Application x:Class="FrameworkTryouts.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:tabs="clr-namespace:FrameworkTryouts.Tabs"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <tabs:TabSizeConverter x:Key="TabSizeConverter" />
+    </Application.Resources>
+</Application>
