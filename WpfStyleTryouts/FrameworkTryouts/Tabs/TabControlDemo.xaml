@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FrameworkTryouts"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -33,13 +32,14 @@
                 <!-- Overridden header template with TextBlock to have full control of text styling -->
                 <Setter Property="HeaderTemplate">
                     <Setter.Value>
-                        <DataTemplate >
-                            <TextBlock Text="{Binding}" 
-                                       TextWrapping="Wrap" 
-                                       TextAlignment="Center" 
-                                       FontSize="16"
-                                       VerticalAlignment="Center" 
-                                       HorizontalAlignment="Center"/>
+                        <DataTemplate>
+                            <TextBlock 
+                                Text="{Binding}" 
+                                TextWrapping="Wrap" 
+                                TextAlignment="Center" 
+                                FontSize="16"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"/>
                         </DataTemplate>
                     </Setter.Value>
                 </Setter>
@@ -56,13 +56,16 @@
                         <Setter Property="BorderThickness" Value="0,0,0,2"></Setter>
                         <Setter Property="BorderBrush" Value="LightGreen"></Setter>
                     </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="LightGreen"></Setter>
+                    </Trigger>
                 </Style.Triggers>
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
         <mah:MetroTabControl>
-            <mah:MetroTabItem Header="Test me bla bla bla bla" IsSelected="True">
+            <mah:MetroTabItem Header="Test me bla bla bla bla " IsSelected="True">
                 Test1
             </mah:MetroTabItem>
             <mah:MetroTabItem Header="Test2">
